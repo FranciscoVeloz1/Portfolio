@@ -1,0 +1,65 @@
+@import "../Vars.scss";
+
+nav {
+  display: flex;
+}
+
+.sidebar {
+  flex-basis: 300px;
+  flex-shrink: 0;
+  transition: transform 0.5s ease-in-out;
+  z-index: 100;
+  height: 100vh;
+  background-color: $very-light-gray;
+  box-sizing: border-box;
+}
+
+.sidebar.active {
+  transform: translateX(-300px);
+}
+
+.sidebar-header {
+  padding: 24px;
+  margin-bottom: 38px;
+  background-color: $light-gray;
+}
+
+.sidebar-header p {
+  font-size: $lg;
+  font-weight: bold;
+}
+
+.sidebar-content {
+  padding: 24px;
+}
+
+.sidebar-content p {
+  font-size: $md;
+  font-weight: bold;
+  width: 75px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid $blue;
+  margin-bottom: 38px;
+}
+
+.sidebar-content ul li {
+  margin-bottom: 34px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $gray;
+}
+
+.sidebar-content ul li a {
+  font-size: $sm;
+  color: black;
+  transition: 250ms all;
+}
+
+.sidebar-content ul li a:hover {
+  color: $blue;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+}
