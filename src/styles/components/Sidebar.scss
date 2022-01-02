@@ -1,16 +1,13 @@
 @import "../Vars.scss";
 
-nav {
-  display: flex;
-}
-
 .sidebar {
   flex-basis: 300px;
   flex-shrink: 0;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.15s ease-in-out;
   z-index: 100;
   height: 100vh;
   background-color: $very-light-gray;
+  transform: translateX(0);
   box-sizing: border-box;
 }
 
@@ -24,8 +21,9 @@ nav {
   background-color: $light-gray;
 }
 
-.sidebar-header p {
+.sidebar-header a {
   font-size: $lg;
+  color: black;
   font-weight: bold;
 }
 
@@ -58,8 +56,12 @@ nav {
   color: $blue;
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .sidebar {
+    transform: translateX(-300px);
+  }
+
+  .sidebar.active {
     transform: translateX(0);
   }
 }

@@ -1,0 +1,59 @@
+@import "../Vars.scss";
+
+.navbar {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 48px;
+}
+
+.navbar-menu {
+  margin-bottom: 36px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navbar-menu button {
+  background-color: white;
+}
+
+.navbar-menu button i {
+  color: $blue;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 4px solid $blue;
+}
+
+.navbar-title {
+  font-size: $md;
+}
+
+.navbar-network a {
+  font-size: $lg;
+  color: $gray;
+  padding: 0 10px;
+}
+
+@media (max-width: 992px) {
+  .navbar-menu {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-title {
+    font-size: $sm;
+  }
+
+  .navbar-network a {
+    font-size: $sm;
+    padding: 0 10px;
+  }
+}

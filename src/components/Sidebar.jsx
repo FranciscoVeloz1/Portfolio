@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 //Importing styles and assets
 import "@styles/components/Sidebar.scss";
 
-const Sidebar = ({ toggle, setToggle }) => {
+const Sidebar = ({ toggle }) => {
   return (
-    <nav className={toggle ? "sidebar active" : "sidebar"}>
+    <div className={toggle ? "sidebar active" : "sidebar"}>
       <div className="sidebar-header">
-        <p>Francisco Veloz</p>
+        <Link to="/">Francisco Veloz</Link>
       </div>
 
       <div className="sidebar-content">
@@ -29,7 +29,7 @@ const Sidebar = ({ toggle, setToggle }) => {
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
   );
 };
 
