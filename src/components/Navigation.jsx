@@ -15,7 +15,7 @@ const Navigation = ({ toggle, setToggle }) => {
 
       <div className="navbar-content">
         <div className="navbar-title">
-          <p>Portafolio Francisco Veloz</p>
+          <p>Francisco González Veloz</p>
         </div>
 
         <div className="navbar-network">

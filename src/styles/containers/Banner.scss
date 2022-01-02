@@ -1,0 +1,71 @@
+@import "../Vars.scss";
+
+.banner-container {
+  width: 100%;
+  height: 448px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 48px;
+  border-bottom: 2px solid $gray;
+  margin-bottom: 48px;
+}
+
+.banner-content {
+  width: 50%;
+  display: flex;
+  padding: 0px 20px;
+  flex-direction: column;
+  line-height: 25px;
+}
+
+.banner-content p:nth-child(1) {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 28px;
+  line-height: 50px;
+}
+
+.banner-content p:nth-child(2) {
+  font-size: $lg;
+  margin-bottom: 28px;
+}
+
+.banner-content p:nth-child(3) {
+  font-size: $sm;
+  margin-bottom: 28px;
+}
+
+.banner-img {
+  height: 100%;
+  width: 50%;
+}
+
+.banner-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 850px) {
+  .banner-container {
+    height: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .banner-content {
+    width: 100%;
+    line-height: 18px;
+  }
+
+  .banner-content p:nth-child(1) {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .banner-img {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+}

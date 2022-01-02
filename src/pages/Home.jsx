@@ -1,9 +1,12 @@
 import React from "react";
 
+//Importing containers
+import Banner from "@containers/Home/Banner";
+
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="home-container">
+      <Banner />
     </div>
   );
 };
