@@ -1,0 +1,64 @@
+@import "../Vars.scss";
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.skill-image {
+  width: 80px;
+  height: 80px;
+  margin: 0px 24px;
+  border: 2px solid $gray;
+  transform: rotate(45deg);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-image img {
+  width: 50px;
+  transform: rotate(-45deg);
+  border-radius: 4px;
+}
+
+.skill-text {
+  width: 60%;
+  padding: 0 24px;
+  line-height: 25px;
+}
+
+.skill-text p:nth-child(1) {
+  font-size: $md;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.skill-text p:nth-child(2) {
+  font-size: $sm;
+}
+
+@media (max-width: 640px) {
+  .skill-card {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    margin-bottom: 48px;
+  }
+
+  .skill-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-image img {
+    width: 30px;
+  }
+
+  .skill-text {
+    padding: 0 14px;
+  }
+}

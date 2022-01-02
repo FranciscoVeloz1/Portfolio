@@ -1,0 +1,30 @@
+@import "../Vars.scss";
+
+.skills-container {
+  width: 100%;
+  padding-bottom: 48px;
+  border-bottom: 2px solid $gray;
+  margin-bottom: 48px;
+}
+
+.skills-title {
+  font-size: $lg;
+  font-weight: bold;
+  width: 68px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid $blue;
+  margin-bottom: 38px;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  place-content: center;
+}
+
+@media (max-width: 992px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+  }
+}
