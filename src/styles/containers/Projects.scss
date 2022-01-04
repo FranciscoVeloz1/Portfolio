@@ -1,0 +1,28 @@
+@import "../Vars.scss";
+
+.projects-container {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.projects-title {
+  font-size: $lg;
+  font-weight: bold;
+  width: 88px;
+  padding-bottom: 12px;
+  border-bottom: 4px solid $blue;
+  margin-bottom: 38px;
+}
+
+.projects-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  place-content: center;
+}
+
+@media (max-width: 640px) {
+  .projects-content {
+    grid-template-columns: 1fr;
+  }
+}
