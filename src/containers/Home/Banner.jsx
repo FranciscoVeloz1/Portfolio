@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Aos from "aos";
 import { Link } from "react-router-dom";
 
 //Importing assets and styles
@@ -6,9 +7,13 @@ import "@styles/containers/Banner.scss";
 import foto from "@assets/fotoC.jpg";
 
 const Banner = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className="banner-container">
-      <div className="banner-content">
+    <div className="banner-container" data-aos="fade">
+      <div className="banner-content" data-aos="fade-right">
         <p>Hi, I'm Francisco González Veloz</p>
 
         <p>Welcome to my portfolio</p>
@@ -25,7 +30,7 @@ const Banner = () => {
         </Link>
       </div>
 
-      <div className="banner-img">
+      <div className="banner-img" data-aos="fade-up">
         <img src={foto} alt="profile" />
       </div>
     </div>

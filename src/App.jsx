@@ -11,6 +11,7 @@ import AppContext from "@context/AppContext";
 import useInitialState from "@hooks/useInitialState";
 
 //Importing styles and assets
+import "aos/dist/aos.css"
 import "@styles/App.scss";
 
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
         <Layout>
           <Routes>
             {routes.map((r) => (
-              <Route exact path={r.path} element={r.element} />
+              <Route key={r.path} exact path={r.path} element={r.element} />
             ))}
             <Route path="*" element={<NotFound />} />
           </Routes>

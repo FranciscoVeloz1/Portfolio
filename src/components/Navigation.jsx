@@ -1,12 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import Aos from "aos";
 
 //Importing styles
 import "@styles/components/Navigation.scss";
 
 const Navigation = ({ toggle, setToggle }) => {
+  useEffect(() => {
+    Aos.init({ duration: 5000 });
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" data-aos="fade">
       <div className="navbar-menu">
         <button onClick={() => setToggle(!toggle)}>
           <i className="fas fa-bars"></i>

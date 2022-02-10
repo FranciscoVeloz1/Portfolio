@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Aos from "aos";
 
 //Importing assets and styles
 import "@styles/containers/Projects.scss";
@@ -17,6 +18,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "React Native",
     badgeColor: "blue",
+    aostime: 1000,
   },
   {
     id: 2,
@@ -28,6 +30,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "Node.js",
     badgeColor: "green",
+    aostime: 1000,
   },
   {
     id: 3,
@@ -39,6 +42,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "JavaScript",
     badgeColor: "yellow",
+    aostime: 1000,
   },
   {
     id: 4,
@@ -50,19 +54,24 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "React",
     badgeColor: "blue",
+    aostime: 1000,
   },
 ];
 
 const Projects = () => {
   const [state, setState] = useState(initialState);
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className="projects-container">
+    <div className="projects-container" data-aos="fade-up">
       <p className="projects-title">Projects</p>
 
       <div className="projects-content">
         {state.map((s) => (
-          <ProjectCard c={s} />
+          <ProjectCard c={s} key={s.id} />
         ))}
       </div>
     </div>

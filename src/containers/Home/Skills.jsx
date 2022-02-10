@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Aos from "aos";
 
 //Importing components
 import SkillCard from "@components/SkillCard";
@@ -48,8 +49,12 @@ const initialState = [
 const Skills = () => {
   const [card, setCard] = useState(initialState);
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className="skills-container">
+    <div className="skills-container" data-aos="fade-up">
       <p className="skills-title">Skills</p>
 
       <div className="skills-content">
