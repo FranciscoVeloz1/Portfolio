@@ -26,7 +26,7 @@ const Banner = () => {
         </p>
 
         <Link to="#" className="btn btn-blue">
-          Learn more
+          About me
         </Link>
       </div>
 

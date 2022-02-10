@@ -16,16 +16,31 @@ const Sidebar = ({ toggle }) => {
 
         <ul>
           <li>
-            <Link to="#">Option A</Link>
+            <Link to="#">
+              <i className="fas fa-laptop-code"></i>
+              Experience
+            </Link>
           </li>
+
           <li>
-            <Link to="#">Option B</Link>
+            <Link to="#">
+              <i className="fas fa-school"></i>
+              Education
+            </Link>
           </li>
+
           <li>
-            <Link to="#">Option C</Link>
+            <Link to="#">
+              <i className="fas fa-award"></i>
+              Competitions
+            </Link>
           </li>
+          
           <li>
-            <Link to="#">Option D</Link>
+            <Link to="#">
+              <i className="fas fa-chalkboard-teacher"></i>
+              Tutorials
+            </Link>
           </li>
         </ul>
       </div>

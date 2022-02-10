@@ -15,34 +15,30 @@ const initialState = [
   {
     id: 1,
     img: js,
-    title: "Lorem, ipsum dolor.",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-    deleniti aliquid eveniet sunt doloremque ducimus odio natus sint
-    blanditiis quo.`,
+    title: "JavaScript developer.",
+    description: `I'm a JavaScript developer. I know how to program with all the main
+    features and frameworks of this programming language. Like React or Node.js.`,
   },
   {
     id: 2,
     img: ingles,
-    title: "Lorem, ipsum dolor.",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-    deleniti aliquid eveniet sunt doloremque ducimus odio natus sint
-    blanditiis quo.`,
+    title: "English",
+    description: `I speak in english. I have good listening, speaking and reading skills.
+    I can maintain a conversation with people who know english either.`,
   },
   {
     id: 3,
     img: kanban,
-    title: "Lorem, ipsum dolor.",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-    deleniti aliquid eveniet sunt doloremque ducimus odio natus sint
-    blanditiis quo.`,
+    title: "Agile methodology",
+    description: `I worked with agile methodologies like Kanban or Scrum, where I used apps
+     like Trello or Miro for control de development process.`,
   },
   {
     id: 4,
     img: team,
-    title: "Lorem, ipsum dolor.",
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-    deleniti aliquid eveniet sunt doloremque ducimus odio natus sint
-    blanditiis quo.`,
+    title: "Teamwork",
+    description: `I developed different apps with amazings teams, with a good environment. 
+    I used Microsoft teams for managing meetings.`,
   },
 ];
 
