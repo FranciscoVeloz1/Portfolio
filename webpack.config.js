@@ -65,6 +65,6 @@ module.exports = {
       directory: path.join(__dirname, "public"),
     },
     compress: true,
-    port: 3005,
+    port: 3000,
   },
 };
