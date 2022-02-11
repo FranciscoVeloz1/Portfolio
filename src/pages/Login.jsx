@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "@context/AuthContext";
+import Input from "@components/Global/Input";
+
+//Importing styles
+import "@styles/pages/Login.scss";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,10 +25,21 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Password" />
-        <button type="submit">Send</button>
+      <form onSubmit={handleSubmit} className="login-form">
+        <p>Log in</p>
+        <Input type="text" text="Email" id="email" styles="bg-light" />
+        <Input
+          type="password"
+          text="Password"
+          id="password"
+          styles="bg-light"
+        />
+
+        <div className="login-button">
+          <button type="submit" className="btn btn-blue">
+            Log in
+          </button>
+        </div>
       </form>
     </div>
   );
