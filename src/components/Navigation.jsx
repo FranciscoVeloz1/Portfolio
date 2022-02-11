@@ -23,19 +23,22 @@ const Navigation = ({ toggle, setToggle }) => {
         </div>
 
         <div className="navbar-network">
-          <a href="https://www.facebook.com/people/Francisco-Veloz/100008854050890/">
+          <a
+            href="https://www.facebook.com/people/Francisco-Veloz/100008854050890/"
+            target="_blank"
+          >
             <i className="fab fa-facebook-f"></i>
           </a>
 
-          <a href="https://twitter.com/FranciscoGVeloz">
+          <a href="https://twitter.com/FranciscoGVeloz" target="_blank">
             <i className="fab fa-twitter"></i>
           </a>
 
-          <a href="https://www.instagram.com/franciscoveloz1/">
+          <a href="https://www.instagram.com/franciscoveloz1/" target="_blank">
             <i className="fab fa-instagram"></i>
           </a>
 
-          <a href="https://www.linkedin.com/in/franciscoveloz/">
+          <a href="https://www.linkedin.com/in/franciscoveloz/" target="_blank">
             <i className="fab fa-linkedin"></i>
           </a>
         </div>

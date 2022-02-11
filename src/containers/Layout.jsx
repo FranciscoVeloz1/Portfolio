@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 //Importing components
 import Sidebar from "@components/Sidebar";
@@ -11,10 +12,15 @@ const Layout = ({ children }) => {
     <div className="main-container">
       <Sidebar toggle={toggle} />
 
-      <div className={toggle ? "main-content active" : "main-content"}>
+      <div
+        className={toggle ? "main-content active" : "main-content"}
+        onClick={() => (toggle ? setToggle(!toggle) : null)}
+      >
         <Navigation setToggle={setToggle} toggle={toggle} />
         {children}
       </div>
+
+      <ToastContainer />
     </div>
   );
 };

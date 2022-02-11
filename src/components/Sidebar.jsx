@@ -19,15 +19,24 @@ const Sidebar = ({ toggle }) => {
   return (
     <div className={toggle ? "sidebar active" : "sidebar"}>
       <div className="sidebar-header">
-        <Link to="/">Francisco Veloz</Link>
+        <Link to={user ? "/admin" : "/"}>Francisco Veloz</Link>
       </div>
 
       <div className="sidebar-content">
         <p>Menu</p>
 
         <ul>
+          {user ? (
+            <li>
+              <Link to="#">
+                <i className="fas fa-chalkboard-teacher"></i>
+                Projects
+              </Link>
+            </li>
+          ) : null}
+
           <li>
-            <Link to="#">
+            <Link to={user ? "/admin/experience" : "/experience"}>
               <i className="fas fa-laptop-code"></i>
               Experience
             </Link>
@@ -55,7 +64,15 @@ const Sidebar = ({ toggle }) => {
           </li>
         </ul>
 
-        {user ? <button className="btn btn-blue" onClick={handleLogout}>Cerrar sesion</button> : null}
+        {user ? (
+          <button
+            className="btn btn-blue"
+            style={{ width: "100%" }}
+            onClick={handleLogout}
+          >
+            Log out
+          </button>
+        ) : null}
       </div>
     </div>
   );

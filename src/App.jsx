@@ -13,6 +13,7 @@ import useInitialState from "@hooks/useInitialState";
 import useAuth from "@hooks/useAuth";
 
 //Importing styles and assets
+import 'react-toastify/dist/ReactToastify.css';
 import "aos/dist/aos.css";
 import "@styles/App.scss";
 
