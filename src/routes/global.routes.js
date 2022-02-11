@@ -8,7 +8,7 @@ const globalRoutes = [
     element: <Home />,
   },
   {
-    path: "/admin",
+    path: "/admin/login",
     element: <Login />,
   },
 ];

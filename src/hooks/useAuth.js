@@ -1,22 +1,22 @@
 import { useState } from "react";
 
 const useAuth = () => {
-  const [isAuth, setIsAuth] = useState(() => {
-    return window.sessionStorage.getItem("token");
-  });
+  const data = JSON.parse(window.sessionStorage.getItem("user"));
+  const [user, setUser] = useState(data);
 
-  const login = (token) => {
-    setIsAuth(true);
-    window.sessionStorage.setItem("token", token);
+  const login = (payload) => {
+    window.sessionStorage.setItem("user", JSON.stringify(payload));
+    const data = JSON.parse(window.sessionStorage.getItem("user"));
+    setUser(data);
   };
 
   const logout = () => {
-    setIsAuth(false);
     window.sessionStorage.clear();
+    setUser(null);
   };
 
   return {
-    isAuth,
+    user,
     login,
     logout,
   };
