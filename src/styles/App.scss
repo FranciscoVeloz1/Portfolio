@@ -72,6 +72,12 @@ table {
   margin-left: -300px;
 }
 
+// Margins
+.ml-1 {
+  margin-left: 5px;
+}
+
+// Buttons
 .btn {
   display: inline-block;
   font-weight: 500;
@@ -110,6 +116,25 @@ table {
   color: white;
 }
 
+.btn-red {
+  background-color: $red;
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: $dark-red;
+}
+
+.btn-info {
+  background-color: $dark-blue;
+  color: white;
+}
+
+.btn-info:hover {
+  background-color: $very-dark-blue;
+}
+
+// Badge
 .badge {
   display: inline-block;
   padding: 4px 6px;
@@ -149,6 +174,7 @@ table {
   border-bottom: $blue solid 1px;
 }
 
+// Media queries
 @media (min-width: 992px) {
   .main-content {
     margin-left: 0;

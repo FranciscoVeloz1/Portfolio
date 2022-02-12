@@ -18,6 +18,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "React Native",
     badgeColor: "blue",
+    duration: "1000"
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "Node.js",
     badgeColor: "green",
+    duration: "2000"
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "JavaScript",
     badgeColor: "yellow",
+    duration: "2000"
   },
   {
     id: 4,
@@ -51,6 +54,7 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "React",
     badgeColor: "blue",
+    duration: "3000"
   },
 ];
 

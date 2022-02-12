@@ -6,11 +6,15 @@ import "@styles/components/SkillCard.scss";
 
 const SkillCard = ({ c }) => {
   useEffect(() => {
-    Aos.init({ duration: 2000 });
+    Aos.init();
   }, []);
 
   return (
-    <div className="skill-card" data-aos="fade-up">
+    <div
+      className="skill-card"
+      data-aos="fade-up"
+      data-aos-duration={c.duration}
+    >
       <div className="skill-image">
         <img src={c.img} alt="js" />
       </div>

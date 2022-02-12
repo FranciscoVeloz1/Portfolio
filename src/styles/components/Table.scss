@@ -1,0 +1,42 @@
+@import "../Vars.scss";
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table td {
+  padding: 12px;
+}
+
+.table tbody tr:hover {
+  background-color: $light-gray;
+}
+
+.table th {
+  font-weight: bold;
+  padding: 18px 12px;
+  text-align: left;
+  background-color: $blue;
+  color: white;
+}
+
+.table tr {
+  border-bottom: solid 0.5px $blue;
+}
+
+.table tr:last-child {
+  border: none;
+}
+
+.table td {
+  font-size: $sm;
+}

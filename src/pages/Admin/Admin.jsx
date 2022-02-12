@@ -1,9 +1,10 @@
 import React from "react";
+import Table from "@components/Global/Table";
 
 const Admin = () => {
   return (
     <div>
-      <h1>Admin</h1>
+      <Table />
     </div>
   );
 };

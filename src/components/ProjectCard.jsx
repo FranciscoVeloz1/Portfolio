@@ -11,7 +11,11 @@ const ProjectCard = ({ c }) => {
   }, []);
 
   return (
-    <div className="project-card" data-aos="fade-up">
+    <div
+      className="project-card"
+      data-aos="fade-up"
+      data-aos-duration={c.duration}
+    >
       <img src={c.img} alt="project" />
 
       <p>
