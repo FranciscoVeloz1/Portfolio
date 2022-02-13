@@ -2,9 +2,14 @@ import React from "react";
 import Table from "@components/Global/Table";
 
 const Admin = () => {
+  const tableOptions = {
+    data: [],
+    title: "Example",
+  };
+
   return (
     <div>
-      <Table />
+      <Table o={tableOptions} />
     </div>
   );
 };

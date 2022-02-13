@@ -1,34 +1,55 @@
 import React from "react";
+import Input from "./Input";
 import "@styles/components/Table.scss";
 
-const Table = () => {
+const Table = ({ o }) => {
   return (
-    <div className="table-responsive">
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Example</th>
-            <th>Example</th>
-            <th>Example</th>
-          </tr>
-        </thead>
+    <div className="table-container">
+      <div className="table-header">
+        <p className="table-title">{o.title}</p>
 
-        <tbody>
-          <tr>
-            <td>ExampleA</td>
-            <td>ExampleB</td>
-            <td>
-              <button className="btn btn-sm btn-red ml-1">
-                <i className="fas fa-trash-alt"></i>
-              </button>
+        <div className="search-container">
+          <div className="search-content">
+            <Input
+              type={"text"}
+              id={"txtsearch"}
+              text="Search..."
+              styles={"table-search"}
+            />
 
-              <button className="btn btn-sm btn-info ml-1">
-                <i className="fas fa-edit"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <button className="">
+              <i className="fas fa-search"></i>
+            </button>
+          </div>
+
+          <div className="filter-container">
+            <i className="fas fa-sliders-h filter-icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <div className="table-content">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Example</th>
+              <th>Example</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>ExampleA</td>
+              <td>ExampleB</td>
+              <td>
+                <i className="fas fa-trash-alt table-icon"></i>
+                <i className="fas fa-edit table-icon"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

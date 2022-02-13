@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "@context/AuthContext";
 import Input from "@components/Global/Input";
@@ -41,6 +42,13 @@ const Login = () => {
 
     if (result.error === "Usuario no encontrado") return setErrorEmail(true);
     if (result.error === "Contraseña incorrecta") return setErrorPass(true);
+    if (result.login === "failed")
+      return Swal.fire({
+        icon: "error",
+        title: "Oops",
+        text: "Something went wrong!",
+        confirmButtonColor: "#ee2c2c"
+      });
 
     login(result);
 

@@ -82,7 +82,7 @@ table {
   display: inline-block;
   font-weight: 500;
   line-height: 1.5;
-  width: 100px;
+  // width: 100px;
   color: black;
   text-align: center;
   text-decoration: none;
@@ -97,14 +97,14 @@ table {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-md {
-  width: 80px;
-}
+// .btn-md {
+//   width: 80px;
+// }
 
-.btn-sm {
-  font-size: $sm;
-  width: 50px;
-}
+// .btn-sm {
+//   font-size: $sm;
+//   width: 50px;
+// }
 
 .btn-blue {
   border: 1px solid $blue;
