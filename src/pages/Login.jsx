@@ -47,7 +47,7 @@ const Login = () => {
         icon: "error",
         title: "Oops",
         text: "Something went wrong!",
-        confirmButtonColor: "#ee2c2c"
+        confirmButtonColor: "#ee2c2c",
       });
 
     login(result);
@@ -55,19 +55,30 @@ const Login = () => {
     navigate("/admin");
   };
 
+  const emailOpt = {
+    type: "text",
+    text: "Email",
+    id: "email",
+    styles: "bg-light",
+    onChange: handleEmail,
+    value: userData.email,
+  };
+
+  const passOpt = {
+    type: "password",
+    text: "Password",
+    id: "password",
+    styles: "bg-light",
+    onChange: handlePass,
+    value: userData.password,
+  };
+
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit} className="login-form">
         <p className="login-title">Log in</p>
         {/* Email input */}
-        <Input
-          type="text"
-          text="Email"
-          id="email"
-          styles="bg-light"
-          onChange={handleEmail}
-          value={userData.email}
-        />
+        <Input o={emailOpt} />
         {errorEmail ? (
           <p className="login-error">
             <i className="fas fa-exclamation-circle"></i>
@@ -76,14 +87,7 @@ const Login = () => {
         ) : null}
 
         {/* Password input */}
-        <Input
-          type="password"
-          text="Password"
-          id="password"
-          styles="bg-light"
-          onChange={handlePass}
-          value={userData.password}
-        />
+        <Input o={passOpt} />
         {errorPass ? (
           <p className="login-error">
             <i className="fas fa-exclamation-circle"></i>
