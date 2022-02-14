@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "@components/Global/Table";
+import Table from "@components/global/Table";
 
 const Admin = () => {
   const initialState = [
@@ -41,6 +41,8 @@ const Admin = () => {
     data: initialState,
     title: "Example",
     headers: ["ID", "Title", "Type", "Color", "Time"],
+    btnAdd: "  Add",
+    addLink: "/admin/projects/add",
     editLink: "/admin/projects/edit",
     delete: handleDelete,
   };

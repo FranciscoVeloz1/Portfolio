@@ -116,6 +116,16 @@ table {
   color: white;
 }
 
+.btn-blue-filled {
+  background-color: $blue;
+  color: white;
+}
+
+.btn-blue-filled:hover {
+  background-color: $dark-blue;
+  color: white;
+}
+
 .btn-red {
   background-color: $red;
   color: white;

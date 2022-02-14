@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "@context/AuthContext";
-import Input from "@components/Global/Input";
+import Input from "@components/global/Input";
 import { auth } from "@services/index.services";
 
 //Importing styles
