@@ -10,7 +10,6 @@ const Projects = () => {
   //Obtenemos los projectos
   const getProjects = async () => {
     const data = await projects.list();
-    console.log(data);
     setProjectList(data);
   };
 
@@ -24,8 +23,9 @@ const Projects = () => {
       cancelButtonText: "No",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const r = "success";
-        r === "success"
+        const res = await projects.deleteData(id);
+        getProjects();
+        res.delete === "success"
           ? toast.error(`Project deleted successfully`, {
               position: "bottom-right",
               theme: "colored",

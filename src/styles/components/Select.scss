@@ -1,0 +1,23 @@
+@import "../Vars.scss";
+
+.select-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.select-label {
+  color: $gray;
+  font-size: $sm;
+  margin-bottom: 4px;
+}
+
+.select {
+  font-size: $sm;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  padding-left: 4px;
+  height: 38px;
+  width: 100%;
+}

@@ -31,30 +31,8 @@
   margin-bottom: 0;
 }
 
-//Keyframes
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes growIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 @media (max-width: 640px) {
   .dropdown-container {
-    margin-top: 180px;
-    margin-left: -80px;
+    margin-left: -140px;
   }
 }

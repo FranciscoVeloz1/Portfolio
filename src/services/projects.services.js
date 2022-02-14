@@ -1,5 +1,4 @@
-import { API } from "./api";
-const { token } = JSON.parse(window.sessionStorage.getItem("user"));
+import { API, getToken } from "./api";
 
 export const list = async () => {
   try {
@@ -24,7 +23,10 @@ export const create = async (payload) => {
   try {
     const response = await fetch(`${API}/projects`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "x-access-token": token },
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": getToken(),
+      },
       body: JSON.stringify(payload),
     });
     return await response.json();
@@ -33,11 +35,14 @@ export const create = async (payload) => {
   }
 };
 
-export const upadte = async (id, payload) => {
+export const update = async (id, payload) => {
   try {
     const response = await fetch(`${API}/projects/${id}`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "x-access-token": getToken(),
+      },
       body: JSON.stringify(payload),
     });
     return await response.json();
@@ -50,6 +55,7 @@ export const deleteData = async (id) => {
   try {
     const response = await fetch(`${API}/projects/${id}`, {
       method: "DELETE",
+      headers: { "x-access-token": getToken() },
     });
     return await response.json();
   } catch (error) {

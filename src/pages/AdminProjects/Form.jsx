@@ -1,13 +1,21 @@
-import React, { useState } from "react";
-import Input from "@components/global/Input";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import { projects } from "@services/index.services";
+import { useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { projects } from "@services/index.services";
+
+//Importing components
+import Input from "@components/global/Input";
+import Select from "@components/global/Select";
+
+//Importing styles
 import "@styles/Form.scss";
 
 const Form = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const [editing, setEditing] = useState(false);
   const [project, setProject] = useState({
     img: "",
     title: "",
@@ -20,25 +28,47 @@ const Form = () => {
   const handleChange = (name, value) =>
     setProject({ ...project, [name]: value });
 
+  //Handle edit
+  const handleEdit = async () => {
+    if (id > 0) {
+      setEditing(true);
+      const data = await projects.get(id);
+      setProject(data);
+    }
+  };
+
+  //Message error
+  const handleError = (message) => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `Project could not be ${message}`,
+    });
+  };
+
   //On submit the form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const result = await projects.create(project);
-    if (result.status !== "success") {
-      console.log(result);
+    if (editing) {
+      const result = await projects.update(id, project);
+      if (result === "Not token provided" || result.status !== "success") {
+        handleError("updated");
+        return;
+      }
+    }
 
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: `Project could not be added`,
-      });
+    if (!editing) {
+      const result = await projects.create(project);
+      if (result === "Not token provided" || result.status !== "success") {
+        handleError("added");
 
-      return;
+        return;
+      }
     }
 
     navigate("/admin/projects");
-    toast.success("Project added successfully", {
+    toast.success(`Project ${editing ? "updated" : "added"} successfully`, {
       theme: "colored",
       position: "bottom-right",
     });
@@ -48,17 +78,10 @@ const Form = () => {
   const inputOpts = [
     {
       type: "text",
-      text: "Image",
-      id: "img",
-      styles: "bg-light",
-      onChange: (e) => handleChange("img", e.target.value),
-      value: project.img,
-    },
-    {
-      type: "text",
       text: "Title",
       id: "title",
-      styles: "bg-light",
+      styles: "form-input",
+      labelStyle: "bg-white",
       onChange: (e) => handleChange("title", e.target.value),
       value: project.title,
     },
@@ -66,41 +89,67 @@ const Form = () => {
       type: "text",
       text: "Description",
       id: "desc",
-      styles: "bg-light",
+      styles: "form-input",
+      labelStyle: "bg-white",
       onChange: (e) => handleChange("description", e.target.value),
       value: project.description,
     },
     {
       type: "text",
+      text: "Image",
+      id: "img",
+      styles: "form-input",
+      labelStyle: "bg-white",
+      onChange: (e) => handleChange("img", e.target.value),
+      value: project.img,
+    },
+  ];
+
+  const selectOpts = [
+    {
       text: "Type",
-      id: "badge",
-      styles: "bg-light",
+      styles: "form-input",
+      options: ["React", "Node.js", "JavaScript", "CSS"],
       onChange: (e) => handleChange("badge", e.target.value),
       value: project.badge,
     },
     {
-      type: "text",
       text: "Color",
-      id: "badgeColor",
-      styles: "bg-light",
+      styles: "form-input",
+      options: ["red", "green", "blue", "yellow"],
       onChange: (e) => handleChange("badgeColor", e.target.value),
       value: project.badgeColor,
     },
   ];
 
+  //Use effect
+  useEffect(() => {
+    handleEdit();
+  }, []);
+
   return (
     <div className="form-container">
       <form onSubmit={handleSubmit} className="form-content">
-        <p className="form-title">Projects</p>
-        <Input o={inputOpts[1]} />
-        <Input o={inputOpts[2]} />
-        <Input o={inputOpts[0]} />
-        <Input o={inputOpts[3]} />
-        <Input o={inputOpts[4]} />
+        <p className="form-title">
+          {editing ? "Update project" : "Add project"}
+        </p>
+        {inputOpts.map((i) => (
+          <Input o={i} key={i.id} />
+        ))}
 
-        <button className="btn btn-blue-filled" type="submit">
-          Save
-        </button>
+        {selectOpts.map((s) => (
+          <Select o={s} key={s.text} />
+        ))}
+
+        <div className="form-btn-container">
+          <button className="btn btn-blue-filled" type="submit">
+            {editing ? "Update" : "Save"}
+          </button>
+
+          <Link to="/admin/projects" className="btn btn-red">
+            Cancel
+          </Link>
+        </div>
       </form>
     </div>
   );
