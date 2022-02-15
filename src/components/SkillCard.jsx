@@ -1,20 +1,11 @@
-import React, { useEffect } from "react";
-import Aos from "aos";
+import React from "react";
 
 //Importing assets and styles
 import "@styles/components/SkillCard.scss";
 
 const SkillCard = ({ c }) => {
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   return (
-    <div
-      className="skill-card"
-      data-aos="fade-up"
-      data-aos-duration={c.duration}
-    >
+    <div className="skill-card">
       <div className="skill-image">
         <img src={c.img} alt="js" />
       </div>

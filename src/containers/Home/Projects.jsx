@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Aos from "aos";
+import React, { useState } from "react";
 
 //Importing assets and styles
 import "@styles/containers/Projects.scss";
@@ -18,7 +17,6 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "React Native",
     badgeColor: "blue",
-    duration: "1000"
   },
   {
     id: 2,
@@ -30,7 +28,6 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "Node.js",
     badgeColor: "green",
-    duration: "2000"
   },
   {
     id: 3,
@@ -42,7 +39,6 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "JavaScript",
     badgeColor: "yellow",
-    duration: "2000"
   },
   {
     id: 4,
@@ -54,19 +50,14 @@ const initialState = [
     officiis. Consectetur.`,
     badge: "React",
     badgeColor: "blue",
-    duration: "3000"
   },
 ];
 
 const Projects = () => {
   const [state, setState] = useState(initialState);
 
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
-
   return (
-    <div className="projects-container" data-aos="fade-up">
+    <div className="projects-container">
       <p className="projects-title">Projects</p>
 
       <div className="projects-content">

@@ -1,21 +1,12 @@
-import React, { useEffect } from "react";
-import Aos from "aos";
+import React from "react";
 import { Link } from "react-router-dom";
 
 //Importing styles
 import "@styles/components/ProjectCard.scss";
 
 const ProjectCard = ({ c }) => {
-  useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
-
   return (
-    <div
-      className="project-card"
-      data-aos="fade-up"
-      data-aos-duration={c.duration}
-    >
+    <div className="project-card">
       <img src={c.img} alt="project" />
 
       <p>

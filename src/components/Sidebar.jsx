@@ -5,6 +5,7 @@ import AuthContext from "@context/AuthContext";
 
 //Importing styles and assets
 import "@styles/components/Sidebar.scss";
+import logo from "@assets/LG-logo.png";
 
 const Sidebar = ({ toggle }) => {
   const navigate = useNavigate();
@@ -19,7 +20,9 @@ const Sidebar = ({ toggle }) => {
   return (
     <div className={toggle ? "sidebar active" : "sidebar"}>
       <div className="sidebar-header">
-        <Link to={user ? "/admin" : "/"}>Francisco Veloz</Link>
+        <Link to={user ? "/admin" : "/"}>
+          <img src={logo} alt="logo" />
+        </Link>
       </div>
 
       <div className="sidebar-content">

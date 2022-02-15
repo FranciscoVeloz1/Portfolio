@@ -70,7 +70,7 @@ const Table = ({ o }) => {
           </div>
 
           <div className="add-container">
-            <Link to={o.addLink} className="btn btn-blue">
+            <Link to={o.addLink} className="btn btn-blue-filled">
               <i className="fas fa-plus"></i>
               {o.btnAdd}
             </Link>
@@ -103,7 +103,9 @@ const Table = ({ o }) => {
               ? info.map((i) => (
                   <tr key={i.id}>
                     {Object.values(i).map((o) => (
-                      <td key={o + Math.random()}>{o}</td>
+                      <td key={o + Math.random()}>
+                        <p className="td-p">{o}</p>
+                      </td>
                     ))}
                     <td>
                       <Link

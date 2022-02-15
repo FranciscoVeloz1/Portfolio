@@ -1,0 +1,13 @@
+@import "../Vars.scss";
+
+.admin-container {
+  background-color: $very-light-gray;
+  padding: 20px 10px;
+  border-radius: 6px;
+  animation: fadeDown .5s;
+}
+
+.admin-container p {
+  font-size: $lg;
+  font-weight: bold;
+}
