@@ -5,7 +5,7 @@
   grid-template-columns: repeat(3, 1fr);
   margin-bottom: 48px;
   animation-name: fadeDown;
-  animation-duration: .8s;
+  animation-duration: 0.8s;
 }
 
 .form-content {
@@ -37,6 +37,12 @@
   flex-direction: column;
 }
 
+.form-select {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
 // Media queries
 @media (max-width: 992px) {
   .search-container {
@@ -52,5 +58,9 @@
   .form-content {
     grid-column: 1;
   }
-  
+
+  .form-select {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
 }

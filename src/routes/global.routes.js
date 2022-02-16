@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "@pages/Home";
 import Login from "@pages/Login";
+import IsNotLoggedIn from "../components/auth/IsNotLoggedIn";
 
 const globalRoutes = [
   {
@@ -9,7 +10,7 @@ const globalRoutes = [
   },
   {
     path: "/admin/login",
-    element: <Login />,
+    element: <IsNotLoggedIn view={Login} />,
   },
 ];
 

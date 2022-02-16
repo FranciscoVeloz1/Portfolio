@@ -15,7 +15,7 @@ const initialState = [
   {
     id: 1,
     img: js,
-    title: "JavaScript developer.",
+    title: "JavaScript developer",
     description: `I'm a JavaScript developer. I know how to program with all the main
     features and frameworks of this programming language. Like React or Node.js.`,
     duration: "1000",

@@ -46,7 +46,7 @@ const Sidebar = ({ toggle }) => {
           </li>
 
           <li>
-            <Link to="#">
+            <Link to={user ? "/admin/education" : "/education"}>
               <i className="fas fa-school"></i>
               Education
             </Link>

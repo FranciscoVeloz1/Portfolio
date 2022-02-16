@@ -7,7 +7,6 @@ import { experiences } from "@services/index.services";
 
 //Importing components
 import Input from "@components/global/Input";
-import Select from "@components/global/Select";
 
 //Importing styles
 import "@styles/Form.scss";

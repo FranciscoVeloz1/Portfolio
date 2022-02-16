@@ -12,13 +12,12 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 18px;
-  transition: 450ms all;
+  transition: 450ms ease-out 100ms;
 }
 
 .project-card img:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  filter: opacity(0.7);
+  -webkit-transform: scale(1.05) !important;
+  transform: scale(1.05) !important;
 }
 
 .project-card p:nth-child(2) {

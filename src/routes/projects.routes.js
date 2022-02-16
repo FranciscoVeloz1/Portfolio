@@ -3,7 +3,7 @@ import IsLoggedIn from "@components/auth/IsLoggedIn";
 import Projects from "@pages/AdminProjects/Projects";
 import Form from "@pages/AdminProjects/Form";
 
-const adminProjectsRoutes = [
+const projectsRoutes = [
   {
     path: "/admin/projects",
     element: <IsLoggedIn view={Projects} />,
@@ -18,4 +18,4 @@ const adminProjectsRoutes = [
   },
 ];
 
-export default adminProjectsRoutes;
+export default projectsRoutes;

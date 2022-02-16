@@ -1,12 +1,13 @@
 import React from "react";
 import IsLoggedIn from "@components/auth/IsLoggedIn";
-import Experience from "@pages/AdminExperience/Experience";
+import AdminExperience from "@pages/AdminExperience/Experience";
+import Experience from "@pages/Experience";
 import Form from "@pages/AdminExperience/Form";
 
-const adminExperienceRoutes = [
+const experienceRoutes = [
   {
     path: "/admin/experience",
-    element: <IsLoggedIn view={Experience} />,
+    element: <IsLoggedIn view={AdminExperience} />,
   },
   {
     path: "/admin/experience/add",
@@ -16,6 +17,10 @@ const adminExperienceRoutes = [
     path: "/admin/experience/edit/:id",
     element: <IsLoggedIn view={Form} />,
   },
+  {
+    path: "/experience",
+    element: <Experience />,
+  },
 ];
 
-export default adminExperienceRoutes;
+export default experienceRoutes;

@@ -77,6 +77,10 @@ table {
   margin-left: 5px;
 }
 
+.mr-1 {
+  margin-right: 5px;
+}
+
 // Buttons
 .btn {
   display: inline-block;
@@ -96,15 +100,6 @@ table {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
-// .btn-md {
-//   width: 80px;
-// }
-
-// .btn-sm {
-//   font-size: $sm;
-//   width: 50px;
-// }
 
 .btn-blue {
   border: 1px solid $blue;
@@ -162,6 +157,11 @@ table {
   background-color: $blue;
 }
 
+.badge-strong-blue {
+  color: white;
+  background-color: #2277ff;
+}
+
 .badge-green {
   color: white;
   background-color: rgb(126, 206, 7);
@@ -172,6 +172,17 @@ table {
   background-color: rgb(218, 218, 0);
 }
 
+.badge-purple {
+  color: white;
+  background-color: rgb(167, 14, 146);
+}
+
+.badge-red {
+  color: white;
+  background-color: $red;
+}
+
+//Background colors
 .bg-light {
   background-color: $very-light-gray;
 }
