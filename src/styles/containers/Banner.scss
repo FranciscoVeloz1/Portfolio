@@ -23,25 +23,30 @@
   font-weight: bold;
   margin-bottom: 28px;
   line-height: 50px;
+  animation: bannerDown 0.5s;
 }
 
 .banner-content p:nth-child(2) {
   font-size: $lg;
   margin-bottom: 28px;
+  animation: bannerDown 1s;
 }
 
 .banner-content p:nth-child(3) {
   font-size: $sm;
   margin-bottom: 28px;
+  animation: bannerDown 1s;
 }
 
 .banner-content .btn {
   width: 100px;
+  animation: bannerDown 1s;
 }
 
 .banner-img {
   height: 100%;
   width: 50%;
+  animation: bannerDown 1s;
 }
 
 .banner-img img {
@@ -49,6 +54,19 @@
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+
+//Keyframes
+@keyframes bannerDown {
+  from {
+    margin-top: 100px;
+    opacity: 0;
+  }
+
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 850px) {

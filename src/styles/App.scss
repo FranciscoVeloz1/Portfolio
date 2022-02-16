@@ -209,6 +209,17 @@ table {
   }
 }
 
+@keyframes fadeRight {
+  from {
+    margin-right: -20px;
+    opacity: 0;
+  }
+  to {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
 @keyframes growIn {
   from {
     transform: scale(0.9);
