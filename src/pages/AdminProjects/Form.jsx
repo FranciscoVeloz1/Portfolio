@@ -15,13 +15,15 @@ import "@styles/Form.scss";
 const Form = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const { get, create, update } = projects;
   const [editing, setEditing] = useState(false);
   const [project, setProject] = useState({
     img: "",
     title: "",
     description: "",
-    badge: "",
-    badgeColor: "",
+    technology: "",
+    link: "",
+    repository: "",
   });
 
   //Save data when input change
@@ -32,7 +34,7 @@ const Form = () => {
   const handleEdit = async () => {
     if (id > 0) {
       setEditing(true);
-      const data = await projects.get(id);
+      const data = await get(id);
       setProject(data);
     }
   };
@@ -51,7 +53,7 @@ const Form = () => {
     e.preventDefault();
 
     if (editing) {
-      const result = await projects.update(id, project);
+      const result = await update(id, project);
       if (result === "Not token provided" || result.status !== "success") {
         handleError("updated");
         return;
@@ -59,7 +61,7 @@ const Form = () => {
     }
 
     if (!editing) {
-      const result = await projects.create(project);
+      const result = await create(project);
       if (result === "Not token provided" || result.status !== "success") {
         handleError("added");
 
@@ -103,22 +105,33 @@ const Form = () => {
       onChange: (e) => handleChange("img", e.target.value),
       value: project.img,
     },
+    {
+      type: "text",
+      text: "Link",
+      id: "link",
+      styles: "form-input",
+      labelStyle: "bg-white",
+      onChange: (e) => handleChange("link", e.target.value),
+      value: project.link,
+    },
+    {
+      type: "text",
+      text: "Repository",
+      id: "repository",
+      styles: "form-input",
+      labelStyle: "bg-white",
+      onChange: (e) => handleChange("repository", e.target.value),
+      value: project.repository,
+    },
   ];
 
   const selectOpts = [
     {
-      text: "Type",
+      text: "Technology",
       styles: "form-input",
-      options: ["React", "Node.js", "JavaScript", "CSS"],
-      onChange: (e) => handleChange("badge", e.target.value),
-      value: project.badge,
-    },
-    {
-      text: "Color",
-      styles: "form-input",
-      options: ["red", "green", "blue", "yellow"],
-      onChange: (e) => handleChange("badgeColor", e.target.value),
-      value: project.badgeColor,
+      options: ["React", "Node.js", "JavaScript", "CSS", "C#"],
+      onChange: (e) => handleChange("technology", e.target.value),
+      value: project.technology,
     },
   ];
 

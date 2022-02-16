@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Aos from "aos";
 import { ToastContainer } from "react-toastify";
 
 //Importing components
@@ -7,6 +8,10 @@ import Navigation from "@components/Navigation";
 
 const Layout = ({ children }) => {
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
     <div className="main-container">

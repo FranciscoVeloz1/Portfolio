@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Aos from "aos";
 
 //Importing assets and styles
 import "@styles/containers/Projects.scss";
@@ -57,13 +56,11 @@ const initialState = [
 const Projects = () => {
   const [state, setState] = useState(initialState);
 
-  useEffect(() => {
-    Aos.init();
-  }, []);
-
   return (
     <div className="projects-container">
-      <p className="projects-title" data-aos="fade-up">Projects</p>
+      <p className="projects-title" data-aos="fade-up">
+        Projects
+      </p>
 
       <div className="projects-content">
         {state.map((s) => (

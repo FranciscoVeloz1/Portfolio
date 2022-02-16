@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Swal from "sweetalert2";
 import Table from "@components/global/Table";
+import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { projects } from "@services/index.services";
 
@@ -13,6 +13,7 @@ const Projects = () => {
     setProjectList(data);
   };
 
+  //Eliminamos projectos
   const handleDelete = (id, item) => {
     Swal.fire({
       text: `Do you want to delete the project ${item}?`,
@@ -42,7 +43,7 @@ const Projects = () => {
   const tableOptions = {
     data: projectList,
     title: "Projects",
-    headers: ["ID", "Title", "Description", "Image", "Type", "Color"],
+    headers: ["ID", "Title", "Description", "Image", "Technology", "Link", "Repository"],
     addLink: "/admin/projects/add",
     editLink: "/admin/projects/edit",
     delete: handleDelete,

@@ -11,6 +11,7 @@ const Input = ({ o }) => {
         value={o.value}
         onChange={o.onChange}
         placeholder="ph"
+        required
       />
 
       <label className={`label ${o.labelStyle}`} htmlFor={o.id}>

@@ -4,6 +4,7 @@ import React from "react";
 import Banner from "@containers/Home/Banner";
 import Skills from "@containers/Home/Skills";
 import Projects from "@containers/Home/Projects";
+import Footer from "@containers/Home/Footer";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Banner />
       <Skills />
       <Projects />
+      <Footer />
     </div>
   );
 };
