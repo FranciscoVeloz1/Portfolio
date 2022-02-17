@@ -32,7 +32,6 @@ const handleBadge = (technology) => {
 };
 
 const ProjectCard = ({ c }) => {
-  console.log(handleBadge());
   useEffect(() => {
     Aos.init();
   }, []);
@@ -54,16 +53,18 @@ const ProjectCard = ({ c }) => {
         {c.description}
       </p>
 
-      <a
-        href={c.repository}
-        className="btn btn-blue btn-sm"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        target="_blank"
-      >
-        <i className="fab fa-github mr-1"></i>
-        Repository
-      </a>
+      {c.repository !== "N/A" ? (
+        <a
+          href={c.repository}
+          className="btn btn-blue btn-sm"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          target="_blank"
+        >
+          <i className="fab fa-github mr-1"></i>
+          Repository
+        </a>
+      ) : null}
     </div>
   );
 };
